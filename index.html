@@ -4,46 +4,282 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Minicurso de Python</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="css/theme/night.css">
+        <link rel="stylesheet" href="css/mystyles.css">
+        <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
 
 		<!-- Printing and PDF exports -->
 		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		 var link = document.createElement( 'link' );
+		 link.rel = 'stylesheet';
+		 link.type = 'text/css';
+		 link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		 document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
+
+        <script type="text/javascript" src="bower_components/d3/d3.min.js"></script>
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+
+                <section data-background-image="imagens/hello_python.png" data-background-size="30%" data-background-position="bottom">
+                    <h1>Minicurso sobre Python</h1>
+                    <h3>Palestrante: Darlan Cavalcante Moreira</h3>
+                </section>
+
+                <section>
+                    <h2>Porque aprender Python?</h2>
+
+                    <div class="fragment">
+                        <ul>
+                            <li>Fácil de entender e aprender</li>
+                            <li>Muito Flexível</li>
+                            <li>Extensa biblioteca disponível: "Baterias incluídas"</li>
+                            <li class="fragment"><span class="green">Vamos utilizar aqui Python 3</span></li>
+                        </ul>
+                    </div>
+                </section>
+
+
+                <section>
+                    <h2>Recursos</h2>
+                    <ul>
+                        <li><a href="https://docs.python.org/3/tutorial/">The Python Tutorial</a></li>
+                        <li><a href="http://hplgit.github.io/primer.html/doc/pub/half/book.pdf">A Primer on Scientific Programming with Python</a></li>
+                        <li><a href="http://www.diveinto.org/python3/">Dive Into Python</a></li>
+                        <li><a href="https://developers.google.com/edu/python/?csw=1">Google's Python Class</a></li>
+                        <li><a href="http://learnpythonthehardway.org/book/">Learn Python the Hard Way (Python 2)</a></li>
+                        <li><a href="https://www.coursera.org/learn/interactive-python-1">An Introduction to Interactive Programming in Python</a></li>
+                        <li><a href="https://www.coursera.org/learn/python">Programming for Everybody (Getting Started with Python)</a></li>
+                        <li><a href="http://www.pythontutor.com/">Python Tutor</a></li>
+                    </ul>
+                </section>
+
+
+                <section id="baterias">
+                    <h2>Qual "bateria" devo usar?</h2>
+                    <h3>para computação numérica</h3>
+
+                    <ul>
+                        <li>O ecossistema para computação numérica em Python pode ser dividido em camadas: <span class="fragment highlight-green">A linguagem Python</span>, <span class="fragment highlight-green"> a biblioteca Numpy</span>, <span class="fragment highlight-green">bibliotecas baseadas no Numpy</span>, <span class="fragment highlight-green">bibliotecas para plot</span>, <span class="fragment highlight-green">terminais mais avançados</span>, <span class="fragment highlight-green">IDEs e similares</span></li>
+                    </ul>
+                    <!-- https://indranilsinharoy.com/2013/01/06/python-for-scientific-computing-a-collection-of-resources/ -->
+                    <!-- <img data-src="/imagens/scientific_stack.png" class="displayed"/> -->
+                    <object width="60%" id="scientific_stack" type="image/svg+xml" data="imagens/scientific_stack.svg"></object>
+                    <!-- svg = d3.select(document.getElementById("scientific_stack").contentDocument).select("svg") -->
+
+                    <!-- <ul><li><span class="red">Nota:</span> A biblioteca <a href="http://www.numpy.org/">Numpy</a> é o núcleo da computação científica em Python e é a mais importante de se aprender bem</li></ul> -->
+                    <aside class="notes">A biblioteca <a href="http://www.numpy.org/">Numpy</a> é o núcleo da computação científica em Python e é a mais importante de se aprender bem</aside>
+                </section>
+
+
+                <section>
+                    <h2>Instalando Python</h2>
+
+                    <ul>
+                        <li>Python possui duas versões: Python2 e <span class="green">Python3</span></li>
+                        <!-- <li>Aqui usaremos a versão 3</li> -->
+                        <li>Podem baixar a partir do site oficial em https://www.python.org/downloads/</li>
+                        <li>No Windows pode ser complicado instalar bibliotecas e suas dependências</li>
+                        <li>Um alternativa mais fácil é usar umas das <em class="green">distribuições Python</em> disponíveis:
+                            <ul>
+                                <li><a href="https://www.continuum.io/downloads/">Anaconda</a> <i class="fa fa-hand-o-right"></i> Esse é o que vamos usar</li>
+                                <li><a href="https://www.enthought.com/products/canopy/">Canopy</a></li>
+                                <li><a href="https://winpython.github.io/">WinPython</a> (possui versão portable)</li>
+                            </ul></li>
+                    </ul>
+                </section>
+
+
+                <section>
+                    <h2>Instalando Anaconda</h2>
+
+                    <ul>
+                        <li>Acessem o site <a href="https://www.continuum.io/downloads">https://www.continuum.io/downloads</a></li>
+                        <li>Podemos baixar a versão "anaconda" ou o "miniconda"</li>
+                        <li>Baixem o miniconda para Python 3</li>
+                        <li>No Windows, basta executar o exe e prosseguir como indicado</li>
+                        <li>No Linux, basta abrir um terminal, navegar até a pasta onde fez o download e digitar
+                            <ul>
+                                <li><code>bash Miniconda3-latest-Linux-x86_64.sh</code></li>
+                            </ul></li>
+                        <li><span class="red">Nota: No Windows deixem as duas caixas marcadas como na figura</span></li>
+                    </ul>
+
+
+                    <p><img src="imagens/miniconda_windows_adicionar_path.png" alt="Adicionar miniconda no path do windows" /></p>
+                </section>
+
+
+                <section>
+                    <h2>Usando o conda</h2>
+
+                    <ul>
+                        <li>O programa <code>conda</code> funciona via linha de comando</li>
+                        <li>Todos os comandos seguem o formato <code>conda COMANDO [ARGUMENTOS]</code> </li>
+                        <li>Digitem em um terminal <code>conda info</code> ou <code>conda list</code></li>
+                        <li>Agora vamos instalar nosso primeiro pacote, o <a href="http://jupyter-notebook-beginner-guide.readthedocs.io/en/latest/what_is_jupyter.html">Jupyter Notebook</a></li>
+                        <li><span class="fragment highlight-green">Digitem o comando</span> <code>conda install notebook</code></li>
+                        <li>O conda vai achar o pacote e perguntar se deseja prosseguir. Digitem <kbd>y</kbd> e apertem <kbd>Enter</kbd></li>
+                        <li><span class="red">Nota</span>: outros comandos úteis são <code>update</code> e <code>help</code></li>
+                    </ul>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Jupyter Notebook</h2>
+
+                        <ul>
+                            <li>Surgiu inicialmente como IPython Notebook, inspirado pelo Mathematica</li>
+                            <li class="fragment">Cada notebook quando aberto está associado a um <span class="green">kernel</span></li>
+                            <li class="fragment">Pode ser usado online em <a href="https://try.jupyter.org">https://try.jupyter.org</a></li>
+                            <li class="fragment"><a href="https://nbviewer.jupyter.org/">nbviewer</a>: Site com vários notebooks interessantes, como por exemplo <a href="https://nbviewer.jupyter.org/github/unpingco/Python-for-Signal-Processing/blob/master/Expectation_Maximization.ipynb">esse aqui</a> (<a href="http://localhost:8888/notebooks/Expectation_Maximization.ipynb">versão local</a>)</li>
+                            <li class="fragment">Pode ser instalado pelo Anaconda</li>
+                            <li class="fragment">Rode o comando <code>jupyter notebook</code> para iniciar <span class="green"><i class="fa fa-hand-o-right"></i> Tentem agora</span></li>
+                            <li class="fragment"><span class="red">Nota:</span> Existem serviços que rodam na nuvem e permitem criar e executar notebooks como <a href="https://cloud.sagemath.com/settings">SageMathCloud</a> e <a href="https://wakari.io/">Wakario</a>
+                                <img alt="" src="imagens/sage_math_cloud.png" class="displayed" style="width: 600px;"/>
+                            </li>
+                        </ul>
+
+                    </section>
+
+                    <section>
+                        <h2>Jupyter Notebook</h2>
+                        <h3>Dashboard</h3>
+
+                        <ul>
+                            <li>Ao executar o notebook uma aba do navegador é aberta com o dashboard</li>
+                            <li>Vemos os arquivos na pasta onde o comando <code>jupyter notebook</code> foi executado</li>
+                            <img alt="" src="imagens/jupyter_dashboard.png" class="displayed" style="border:none; width:850px"/>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Jupyter Notebook</h2>
+                        <h3>Editor</h3>
+
+                        <ul>
+                            <li>No dashboard, cliquem em "New" e escolham o kernel indicado como Python3 para criar um novo notebook</li>
+                            <li class="fragment green">Executar o tour pela interface em "Help <i class="fa fa-arrow-right"></i> User Interface Tour" </li>
+                            <li class="fragment">As células podem ser de dois tipos: markdown e code</li>
+                            <li class="fragment">Células do tipo "markdown" contém texto que é renderizado usando a <a href="https://daringfireball.net/projects/markdown/syntax">notação markdown</a></li>
+                            <li class="fragment">Células do tipo "code" contém código que será executado, possivelmente resultando em alguma saída mostrada abaixo</li>
+                            <li class="fragment">Em alguns caso a saída será mostrada em um <span class="green">formato mais apropriado</span></li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Jupyter Notebook</h2>
+                        <h3>Exercício</h3>
+                        <ul>
+                            <li>Crie uma célula markdown contendo texto com alguma formatação em markdown</li>
+                            <li>Uma célula abaixo definindo duas variáveis com números</li>
+                            <li>Crie uma célula abaixo somando as duas variáveis</li>
+                            <li>Faça um merge das duas células anteriores</li>
+                            <li>Crie uma célula vazia</li>
+                            <li>Delete a célula vazia recém criada</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2>Jupyter Notebook</h2>
+                        <h3>Mais que um terminal</h3>
+                        <ul>
+                            <li>O editor do Jupyter possui algumas melhorias que não são possíveis em um terminal</li>
+                            <ul>
+                                <li><code>obj?</code> mostra informações do objeto em um <em>pager</em></li>
+                                <li><kbd>Shift</kbd>+<kbd>Enter</kbd> em uma função mostra a docstring da função em um popup</li>
+                                <li><span class="green">Rich Display System</span>: Estende o método nativo <code>__repr__</code> do Python para outras representações e o notebook vai escolher a mais apropriada</li>
+                                <ul><li>Representações possíveis: HTML, JSON, PNG, JPEG, SVG, LaTeX</li></ul>
+                                <li>Etc.</li>
+                            </ul>
+                        </ul>
+                    </section>
+
+                </section>
+
+                <section>
+                    <h2>Automatizando as coisas chatas com Python</h2>
+                </section>
+
 			</div>
 		</div>
 
+        <!-- <script src="node_modules/jquery/dist/jquery.min.js"></script> -->
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
 
 		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
+		 // More info about config & dependencies:
+			    // - https://github.com/hakimel/reveal.js#configuration
+		 // - https://github.com/hakimel/reveal.js#dependencies
+		 Reveal.initialize({
+             height: 1080,
+             width: 1920,
+             /*              width: 1280,*/
+
+             /*              minScale: 0.3,*/
+             /*              maxScale: 1.0,*/
+
+             // Factor of the display size that should remain empty around the
+             // content
+             margin: 0.1,
+
+             // Display the page number of the current slide
+             slideNumber: true,
+
+             history: true,
+
+             // Turns fragments on and off globally
+             fragments: true,
+
+             // Hides the address bar on mobile devices
+             hideAddressBar: true,
+
+             // Transition style
+             transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+             // Transition speed
+             transitionSpeed: 'default', // default/fast/slow
+
+             // Transition style for full page slide backgrounds
+             backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+             // Number of slides away from the current that are visible
+             viewDistance: 3,
+
+             zoomKey: 'shift',
+
+             zoomPan: true,
+
+			 dependencies: [
+				 { src: 'plugin/markdown/marked.js' },
+				 { src: 'plugin/markdown/markdown.js' },
+				 { src: 'plugin/notes/notes.js', async: true },
+				 { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                 { src: 'plugin/zoom-js/zoom.js', async: true },
+                 { src: 'plugin/math/math.js', async: true },
+                 /*                  { src: 'js/MathJax_local.js', async: true },*/
+			 ]
+		 });
 		</script>
+
+        <script src="js/my_d3_draws.js"></script>
+
+        <script src="js/add_Reveal_Event_Listeners.js">
+
+        </script>
 	</body>
 </html>
+<!--
+     Local Variables:
+     ispell-local-dictionary: "brasileiro"
+     ispell-skip-html: t
+     End:
+     End: -->

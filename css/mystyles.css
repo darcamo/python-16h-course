@@ -1,0 +1,162 @@
+.red {
+    color: #ff2c2d;
+}
+
+.green {
+    color: #17ff2e;
+}
+
+
+kbd {
+    color: #000;
+    padding-left:.25em;
+    padding-right:.25em;
+    font: normal .85em/1 "Lucida Grande", Lucida, Arial, sans-serif;
+    border:solid 1px #c2c2c2;
+    border-radius:4px;
+    background-color:#e0e0e0;
+    /* box-shadow:1px 1px silver; */
+    box-shadow: inset 0 0 1px rgb(255, 255, 255), inset 0 0 .4em rgb(200, 200, 200), 0 .1em 0 rgb(130, 130, 130), 0 .11em 0 rgba(0, 0, 0, .4), 0 .1em .11em rgba(0, 0, 0, .9);
+}
+
+
+.fa {
+    margin-left:5px;
+    margin-right:5px;
+}
+
+/* Se tiver uma tag code dentro de um item de uma lista */
+li>code {
+    color: goldenrod;
+}
+
+/* O padrão de ".reveal pre" é de 90%, mas acho que quando coloco um bloco
+   dentro de um item de uma lista é melhor deixar em auto, que vai pegar
+   100%, já que os itens em uma lista já são um pouco menores. Além disso,
+   adiciona uma pequena margem a direita. */
+.reveal li>pre {
+    width: auto;
+    margin-right: 3%;
+}
+
+body {
+    counter-reset: ipython-in;
+    /* counter-increment: ipython-in; */
+}
+
+
+.ipython-in:before {
+    counter-increment: ipython-in;
+    content: "In  [" counter(ipython-in) "]: ";
+    color:#17ff2e;
+}
+
+.ipython-out:before {
+    content: "Out [" counter(ipython-in) "]: ";
+    color:#ff2c2d;
+}
+
+code-terminal {
+    counter-reset: ipython-in;
+}
+
+@media print {
+    li>code {
+        color: #b8860b;
+    }
+
+    .green {
+        color: DarkGreen;
+    }
+
+    .red {
+        color: DarkRed;
+    }
+
+    .ipython-in:before {
+        color: DarkGreen;
+    }
+
+    .ipython-out:before {
+        color: DarkRed;
+    }
+
+    /* Code block font is too slim in print. Let's make it bolder */
+    pre code {
+        font-weight: 900 !important;
+    }
+}
+
+.reveal .container {
+    display: block;
+}
+
+.reveal .displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: none;
+    /* margin: auto; */
+}
+
+
+.reveal .numpy_table table td{
+    color: black;
+    border: 1px solid gray;
+    background-color: white;
+}
+
+
+.reveal .container:before {
+    /* content: ""; */
+    /* display: inline-block; */
+    /* vertical-align: middle; */
+    /* width: 0; */
+    /* adjust for white space between pseudo element and next sibling */
+    /* margin-right: -.25em; */
+    /* stretch line height */
+    /* height: 100%;  */
+}
+
+.reveal .element {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 5px;
+    margin-right: 5px;
+    /* white-space: normal; */
+}
+
+.reveal in {
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.reveal in:before {
+    counter-increment: ipython-in;
+    content: "In  [" counter(ipython-in) "]: ";
+    color:#17ff2e;
+}
+
+.reveal output {
+    display: inline-block;
+    /* transform: translateY(-10px); */
+}
+
+/* Apenas o primeiro "in" dentro do code é afetado */
+code>in:first-of-type {
+    margin-top: 0px;
+}
+
+.reveal output:before {
+    content: "Out [" counter(ipython-in) "]: ";
+    color:#ff2c2d;
+}
+
+
+/* .reveal svg rect:hover, text:hover { */
+/*     fill:red !important; */
+/* } */
+
+/* Local Variables: */
+/* eval: (rainbow-mode t) */
+/* End: */
