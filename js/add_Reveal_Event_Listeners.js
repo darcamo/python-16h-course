@@ -2,7 +2,7 @@
 // https://github.com/ptamarit/slides-data-viz-web-d3/blob/master/src/js/reveal-to-d3.js
 Reveal.addEventListener('slidechanged', function(event) {
     update_baterias();
-    // update_ipython_magic();
+    update_ipython_magic();
     // update_indexa_array();
     // update_indexa_array2();
     // update_indexa_array3();
@@ -14,7 +14,7 @@ Reveal.addEventListener('slidechanged', function(event) {
 });
 Reveal.addEventListener('fragmentshown', function(event) {
     update_baterias();
-    // update_ipython_magic();
+    update_ipython_magic();
     // update_indexa_array();
     // update_indexa_array2();
     // update_indexa_array3();
@@ -26,7 +26,7 @@ Reveal.addEventListener('fragmentshown', function(event) {
 });
 Reveal.addEventListener('fragmenthidden', function(event) {
     update_baterias();
-    // update_ipython_magic();
+    update_ipython_magic();
     // update_indexa_array();
     // update_indexa_array2();
     // update_indexa_array3();
