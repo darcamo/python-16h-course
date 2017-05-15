@@ -1,0 +1,85 @@
+
+<section><h2>Operadores em Python</h2></section>
+<section>
+    <h2>Operadores Aritméticos</h2>
+    <ul style="font-size: 90%">
+        <li>Os operadores aritméticos em Python são os
+            mesmos do C/C++
+            <div style="width: auto; font-size: 80%; text-align:center; font-family:'monospace'">+, -, *, /, <span class="fragment highlight-current-green" data-fragment-index="1">//</span>, %, <span class="fragment highlight-current-green" data-fragment-index="1">**</span>, +=, -=, *=, /=, %=, <span class="fragment highlight-current-green" data-fragment-index="1">**=</span>, <span class="fragment highlight-current-green" data-fragment-index="1">\\=</span></div></li>
+        <li class="fragment" data-fragment-index="1">Com
+            adição de um operador para divisão de
+            inteiros e um para potenciação</li>
+        <li class="fragment" data-fragment-index="2">Mas não temos os operadores unários <code>++</code> e <code>--</code></li>
+    </ul>
+    <code-terminal>>>> a = 1
+>>> b = 2
+>>> print(a + b)
+3
+>>> a = 5
+>>> print(a / b)  # 'a' e 'b' são inteiros, mas a divisão é em float
+2.5
+<span class="fragment" data-fragment-index="1">>>> print(a // b)
+2
+>>> print(a**2)
+25</span></code-terminal>
+
+</section>
+
+<section>
+    <h2>Operadores Relacionais</h2>
+    <ul>
+        <li>Temos os mesmos operadores relacionais do C/C++
+            <div style="width: auto; font-size: 90%; text-align:center; font-family:'monospace'">> , < , ==, !=, >=, <=</div>
+        </li>
+        <li class="fragment" data-fragment-index="1">Além deles, temos também os operadores "<code>is</code>" e "<code>in</code>"</li>
+    </ul>
+
+    <code-terminal>>>> a = 1;  b = 2  # Usamos ";" para colocar dois comandos na mesma linha
+>>> a == b
+False
+>>> a > b
+False
+>>> a = [1, 2, 3]; b = [1, 2, 3]  # Duas listas contendo os mesmos elementos
+>>> a == b  # 'a' e 'b' são iguais (possuem o mesmo valor) ...
+True
+
+<span class="fragment" data-fragment-index="1">>>> a is b  # ... mas 'a' e 'b' são variáveis diferentes
+False
+>>> a = b  # Agora a e b são a mesma variável (modifique um e o outro muda)
+>>> a is b
+True
+>>> l = [2, 5, 10]
+>>> 5 in l  # O número 5 está na lista 'l'?
+True
+>>> 4 in l  # O número 4 está na lista 'l'?
+False</span></code-terminal>
+</section>
+
+<section>
+    <h2>Operadores Lógicos</h2>
+
+    <ul>
+        <li>Ao invés de <code>&&</code> e
+            <code>||</code> temos as palavras chave <code>and</code>
+            e <code>or</code></li>
+        <li>Ao invés de <code>!</code> temos a palavra chave <code>not</code></li>
+        <li class="fragment" data-fragment-index="1">Também temos os operadores lógicos bit-a-bit <code>&</code>, <code>|</code>, <code>^</code>, assim como um operador inverter os bits de um inteiro <code>~</code> </li>
+    </ul>
+
+    <code-terminal>>>> 3 < 5 and 4 <= 2
+False
+>>> 3 <= 5 or 4 < 2
+True
+>>> not (3 <= 5 or 4 < 2)
+False
+
+<span class="fragment" data-fragment-index="1">>>> 5 | 2  # Aquele item na 5 questão da prova
+7
+>>> 5 & 2  # Aquele outro item na 5 questão da prova
+0
+>>> 16 ^ 6 ^ 10 ^ 15 ^ 16 ^ 6 ^ 10  # Aquela questão que pouca gente acertou
+15
+>>> ~7  # Invertemos cada bit de 7 (incluindo o bit de sinal)
+-8</span></code-terminal>
+
+</section>

@@ -1,0 +1,270 @@
+
+<section>
+    <h2>Mais sobre os tipos de dados em Python</h2>
+    <p style="margin: 0px; padding: 0px;"><small>Vamos agora mostrar em maiores detalhes os tipos de dados em Python</small></p>
+</section>
+
+<section>
+    <h2>Strings em Python</h2>
+
+    <ul>
+        <li>Strings são escritas com aspas simples ou duplas</li>
+        <li class="fragment">O operador "+" pode ser usado para concatenar strings
+            <ul>
+                <li>Ex: <code>"a" + "b"</code> é o mesmo que <code>"ab"</code></li>
+            </ul></li>
+        <li class="fragment">O operador "<code>*</code>" pode ser usado para repetir strings
+            <ul>
+                <li>Ex: <code>"a" * 10</code> é o mesmo que <code>"aaaaaaaaaa"</code></li>
+            </ul></li>
+        <li class="fragment">Caracteres não imprimíveis podem ser
+            expressos usando notação "barra-invertida"
+            <ul>
+                <li><code>\n</code> é o mesmo que <em>new line</em></li>
+                <li><code>\t</code> é o mesmo que <em>tab</em></li>
+                <li><code>\\</code> é o mesmo que \</li>
+                <li><code>\"</code> e <code>\'</code> é o mesmo que <code>"</code> e <code>'</code>, respectivamente</li>
+            </ul></li>
+    </ul>
+</section>
+
+<section>
+    <h2>Strings em Python</h2>
+
+    <ul>
+        <li>Também é possível escrever string em várias
+            linhas incluindo as quebras de linha usando
+            três aspas
+            <code-terminal>>>> print("""
+Um tigre
+dois tigres
+três tigres""")</code-terminal></li>
+        <li class="fragment">Strings possuem muitos métodos úteis, como <code>format</code>, <code>split</code>, <code>join</code>, <code>strip</code>
+            <code-terminal class="python">>>> disciplina = "Fundamentos de Programação"
+>>> professor = "Darlan"
+>>> print("{0} é o professor de \"{1}\"".format(professor, disciplina))
+Darlan é o professor de "Fundamentos de Programação"</code-terminal></li>
+        <li class="fragment">Veja a <a href="https://docs.python.org/3/library/stdtypes.html#string-methods">documentação</a> de
+            strings para métodos úteis</li>
+    </ul>
+
+</section>
+
+<section>
+    <h2>Índices e Slices</h2>
+
+    <ul>
+        <li>É possível pegar um caractere de uma string
+            com a notação <code>string[índice]</code></li>
+        <li>Um índice negativo endereça <strong>em sentido inverso</strong></li>
+        <li class="fragment" data-fragment-index="1">Podemos endereçar <span class="green">fatias</span> (slices) com notação <code>[início:fim:passo]</code></li>
+    </ul>
+
+    <code-terminal class="python" data-noescape>>>> a = "abcde"
+>>> a[0]    # Pega o primeiro elemento
+a
+>>> a[-1]   # Pega o último elemento
+e
+>>> a[-2]   # Pega o penúltimo elemento
+d
+
+<spam class="fragment" data-fragment-index="1">>>> a[2:4]  # Pega os elementos do índice 2 aoíndice 3
+cd
+>>> a[-2:]  # Dois últimos elementos
+de
+>>> a[::-2] # Pega os elementos do primeiro ao último pulando de 2 em 2
+ace</spam></code-terminal>
+
+</section>
+
+<section>
+    <h2>Listas</h2>
+
+    <ul>
+        <li>Python possui vários tipos compostos,
+            usados para agrupar outros valores.</li>
+        <li class="fragment">O mais versátil de todos é a lista
+            <code-terminal class="python">>>> l1 = [15, 34.5, 44]  # itens são separados por vírgulas
+>>> l2 = ["Brasil", "Estados Unidos", "Japão", "França"]
+>>> l3 = [1, 2, "três", "quatro"]  # Itens podem ter tipos diferentes</code-terminal></li>
+        <aside class="notes">Listas podem conter itens de diferentes tipos, mas normalmente todos os itens possuem o mesmo tipo</aside>
+        <li class="fragment">A lista é um tipo <span class="green">mutável</span> <i class="fa fa-hand-o-right"></i> é possível modificar seus elementos
+            <code-terminal class="python">>>> a = [1, 5, 10, 15, 20]
+>>> a[2] = 100
+>>> print(a)
+[1, 5, 100, 15, 20]</code-terminal></li>
+        <li class="fragment">Podemos indexar strings, mas <span class="green">strings são imutáveis</span>
+            <ul>
+                <li>Não podemos modificar uma letra de uma string</li>
+                <li>Precisamos criar uma nova string nesse caso</li>
+        </li>
+            </ul>
+
+    </ul>
+</section>
+
+<section>
+    <h2>Listas</h2>
+
+    <ul>
+        <li>Assim como em strings, podemos indexar uma
+            lista para pegar um elemento em particular ou
+            uma fatia (slice)</li>
+        <li class="fragment" data-fragment-index="1">Também é possível
+            concatenar duas listas com o operador <code>+</code> assim como fazemos com strings</li>
+        <li class="fragment" data-fragment-index="2">Uma operação comum em um lista consiste em adicionar um ou mais elementos: use os métodos <code>append</code> e <code>extend</code></li>
+    </ul>
+    <code-terminal class="fragment" data-fragment-index="2">>>> a = [1, 5, 10]
+>>> a.append(15)  # Adiciona o número 15 na lista
+>>> print(a)
+[1, 5, 10, 15]
+>>> b = [100, 200]
+>>> a.extend(b)  # Adiciona os elementos da lista 'b' na lista 'a'
+>>> print(a)
+[1, 5, 10, 15, 100, 200]</code-terminal>
+
+</section>
+
+<section>
+    <h2>Listas</h2>
+
+    <ul>
+        <li>Podemos usar slices também para fazer atribuições</li>
+        <li class="fragment" data-fragment-index="1">Para remover um elemento podemos usar <code>remove</code></li>
+        <li class="fragment" data-fragment-index="2"><code>pop</code> remove e retorna o último elemento da lista</li>
+        <li class="fragment" data-fragment-index="3">Para remover um elemento pelo índice use <code>del</code></li>
+    </ul>
+
+    <code-terminal>>>> a = [1, 5, 10, 15, 100, 200]
+>>> a[1::2] = [1000, 2000, 3000]  # a[1::2] -> posições 1, 3 e 5
+>>> print(a)
+[1, 1000, 10, 2000, 100, 3000]
+<span class="fragment" class="fragment" data-fragment-index="1">>>> a.remove(10)  # Encontra o primeiro 10 na lista e remove
+>>> print(a)
+[1, 1000, 2000, 100, 3000]</span>
+<span class="fragment" data-fragment-index="2">>>> b = a.pop()   # Remove o último elemento da lista (3000) e retorna
+>>> print(b)
+3000</span>
+<span class="fragment" data-fragment-index="3">>>> del a[0:2]  # Remove os 2 primeiros elementos</span></code-terminal>
+</section>
+
+<section>
+    <h2>Listas</h2>
+
+    <ul>
+        <!-- <li>Esse é o 4 slide sobre listas <i class="fa fa-hand-o-right"></i> Elas são realmente flexíveis</li> -->
+        <li>É comum querermos construir uma lista efetuando uma operação em cada elemento de outra lista</li>
+        <li class="fragment" data-fragment-index="1">Para isso Python forcece o conceito de <span class="green">list comprehensions</span></li>
+        <li class="fragment" data-fragment-index="3">Suponha que queremos criar um conjunto com valores definidos por \(\{x^2 : x \in \{0, ..., 9\}\}\)</li>
+        <li class="fragment green" data-fragment-index="4">E se quisermos o quadrado apenas dos números pares?</li>
+    </ul>
+    <code-terminal class="fragment" data-fragment-index="3">>>> a = [x**2 for x in range(10)]
+>>> print(a)
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+<span class="fragment" data-fragment-index="4">>>> a = [x**2 for x in range(10) if x % 2 == 0]
+>>> print(a)
+[0, 4, 16, 36, 64]</span></code-terminal>
+
+    <p class="fragment">Veja mais na <a href="https://docs.python.org/3/tutorial/introduction.html#lists">documentação oficial</a>
+
+</section>
+
+<section>
+    <h2>Tuplas</h2>
+    <ul>
+        <!-- <li>Listas e strings possuem muitos métodos em comum, como indexar, usar slices, etc</li>
+             <li>Outro tipo padrão sào as <span class="green">tuplas</span></li> -->
+        <li>Tuplas consistem de um conjunto de valores em parêntesis separados por vírgula</li>
+        <li class="fragment" data-fragment-index="1">Tuplas são semelhante as listas, mas tuplas
+            são <span class="green">imutáveis</span>
+            <ul>
+                <li>Seus valores não podem ser modificados e não é possível adicionar ou remover valores</li>
+            </ul></li>
+        <li class="fragment" data-fragment-index="2">Também podemos acessar os elementos de uma
+            tupla (ou qualquer sequência) é via <span class="green">unpacking</span></li>
+    </ul>
+
+    <code-terminal>>>> minha_tupla = (1, 2, 3, "e", "já")
+
+<span class="fragment" data-fragment-index="1">>>> minha_tupla[0] = 10  # ERRO -> tuplas são imutáveis!</span>
+
+<span class="fragment" data-fragment-index="2">>>> a, b, c, d, e = minha_tupla  # Coloca os elementos nas variáveis
+>>> print(b)
+2
+>>> print(e)
+já</span></code-terminal>
+
+</section>
+<section>
+    <h2>Dicionários</h2>
+    <ul>
+        <li>Um dicionário mapeia uma <span class="green">chave</span> e um <span class="green">valor</span></li>
+        <li>As chaves precisam ser imutáveis (e únicas)</li>
+        <li class="fragment" data-fragment-index="1">Podemos testar se uma chave está no dicionário com <code>in</code></li>
+        <li class="fragment" data-fragment-index="2">O método <code>keys()</code> retorna as chaves no dicionário</li>
+        <li class="fragment" data-fragment-index="3">Use <code>del</code> para remover um par chave/valor do dicionário</li>
+    </ul>
+    <code-terminal>>>> telefones = {"Polícia": 190, "Ambulância": 192}
+>>> telefones["Polícia"]
+190
+<span class="fragment" data-fragment-index="1">>>> "Bombeiros" in telefones
+False
+>>> telefones["Bombeiros"] = 193
+>>> "Bombeiros" in telefones
+True</span>
+<span class="fragment" data-fragment-index="2">>>> print(list(telefones.keys()))  # Imprime uma lista com as chaves
+['Bombeiros', 'Ambulância', 'Polícia']</span>
+<span class="fragment" data-fragment-index="3">>>> del telefones['Ambulância']
+>>> print(list(telefones.keys()))  # Imprime uma lista com as chaves
+['Bombeiros', 'Polícia']</span>
+</code-terminal>
+</section>
+
+<section>
+    <h2>Dicionários</h2>
+
+    <ul>
+        <li>Podemos iterar sobre um dicionário com um <code>for</code></li>
+        <li>use <code>d.items()</code> para retornar uma "lista de pares" de chave e valor que pode ser usada em um <code>for</code>, por exemplo</li>
+    </ul>
+    <pre><code class="python" data-external="code/dicionario.py"></code></pre>
+    <p>Exemplo
+        <code-terminal>>>> for chave, valor in d.items():
+...   print("{0}: {1}".format(chave, valor))
+e: 2.718282
+pi: 3.141592
+número de ouro: 1.618</code-terminal></p>
+
+</section>
+
+<section>
+    <h2>Conjuntos</h2>
+
+    <ul>
+        <li>Um conjunto em python é uma coleção de
+            items <span class="green">sem ordem
+            definida</span> e <span class="green">sem elementos
+            duplicados</span></li>
+        <li class="fragment" data-fragment-index="1">Criamos um conjunto usando chaves ou usando <code>set</code></li>
+        <li class="fragment" data-fragment-index="2">Ações
+            básicas: <span class="fragment highlight-current-green" data-fragment-index="2">testar pertinência</span>, <span class="fragment highlight-current-green" data-fragment-index="3">união,</span> <span class="fragment highlight-current-green" data-fragment-index="4">interseção,</span> <span class="fragment highlight-current-green" data-fragment-index="5">diferença</span> <span class="fragment highlight-current-green" data-fragment-index="6">e diferença simétrica</span></li>
+    </ul>
+
+    <code-terminal class="fragment" data-fragment-index="1">>>> cesta = {'maçã', 'laranja', 'maçã', 'pera', 'laranja', 'banana'}
+>>> print(cesta)  # Perceba que duplicatas foram eliminadas
+{'pera', 'banana', 'laranja', 'maçã'}
+<span class="fragment" data-fragment-index="2">>>> 'laranja' in cesta
+True
+>>> 'limão' in frutas
+False
+<span class="fragment" data-fragment-index="3">>>> A = set('abracadabra'); B = set('alacazam')  # Vamos testar operaçoes
+>>> A | B  # União: Letras em a ou b
+{'a', 'b', 'c', 'd', 'l', 'm', 'r', 'z'}</span>
+<span class="fragment" data-fragment-index="4">>>> A & B  # Interseção: Letras em a e em b
+{'a', 'c'}</span>
+<span class="fragment" data-fragment-index="5">>>> A - B  # Diferença: Letras em a que não estão em b
+{'b', 'd', 'r'}</span>
+<span class="fragment" data-fragment-index="6">>>> A ^ B  # Diferença simétrica: Letras em a ou em b, mas não em ambos
+{'b', 'd', 'l', 'm', 'r', 'z'}</span></span></code-terminal>
+</section>
