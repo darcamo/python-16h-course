@@ -1,0 +1,122 @@
+
+
+<section>
+    <div class="retangulo-preto">
+                        <h2>Plotando com Matplotlib</h2>
+
+                        <ul>
+                            <aside class="notes">Existem várias bibliotecas para plot em Python</aside>
+                            <li>A biblioteca mais conhecida para plot no Python é a <a href="http://matplotlib.org/">Matplotlib</a></li>
+                            <li class="fragment" data-fragment-index="1">A função mais importante é a função <code>plt.plot</code>, que recebe arrays com os valores para plotar</li>
+                            <li class="fragment" data-fragment-index="2">Chame a função <code>plt.show</code> no final para mostrar o plot</li>
+                            <li class="fragment" data-fragment-index="3">Com um pouco esforço a mais podemos facilmente plotar múltiplas linhas de uma só vez, adicionar um título, legenda e labels para os eixos</li>
+                            <li class="fragment" data-fragment-index="4"><i class="fa fa-lightbulb-o"></i> Dica: coloque <code>%matplotlib inline</code> ou <code>%matplotlib notebook</code> na primeira célula do Jupyter notebook</li>
+                        </ul>
+                        <div class="container">
+                            <pre class="element" style="width:58%;"><code class="python" data-noescape>import numpy as np
+import matplotlib.pyplot as plt
+
+# Computa as coordenadas 'x' e 'y' para ambas as curvas
+x = np.arange(0, 3 * np.pi, 0.1)
+y_sin = np.sin(x)
+<span class="fragment" data-fragment-index=4">y_cos = np.cos(x)</span>
+
+# Plota os pontos usando matplotlib
+<span class="fragment highlight-green" data-fragment-index="1">plt.plot(x, y_sin)</span>
+<span class="fragment" data-fragment-index=3">plt.plot(x, y_cos)
+plt.xlabel('x axis label')
+plt.ylabel('y axis label')
+plt.title('Sine and Cosine')
+plt.legend(['Sine', 'Cosine'])</span>
+<span class="fragment highlight-green" data-fragment-index="2">plt.show()</span>  # Necessário para mostrar o gráfico</code></pre>
+
+                            <div class="element" style="width:38%; height:300px; position:relative;">
+                                <img class="fragment fade-out" data-fragment-index="3" alt="Plot de uma curva seno" src="imagens/sine_plot.png" style="background-color: white; width:100%; position:absolute;top:0;left:0;"/>
+                                <img class="fragment fade-in" data-fragment-index="3" alt="Plot de uma curva seno" src="imagens/sine_cosine_plot.png" style="background-color: white; width:100%; position:absolute;top:0;left:0;"/>
+                            </div>
+                        </div>
+    </div>
+</section>
+
+<section>
+    <div class="retangulo-preto">
+                        <h2>Plotando com Matplotlib</h2>
+                        <h3>Exercício</h3>
+
+                        <ul>
+                            <li>Repita o plot anterior no notebook, mas agora incluindo círculos nos pontos</li>
+                            <li><span class="red">Dica</span>: rode o comando plt.plot? para ver a ajuda do comando</li>
+                        </ul>
+    </div>
+</section>
+
+<section>
+    <div class="retangulo-preto">
+                        <h2>Plotando com Matplotlib</h2>
+
+                        <ul>
+                            <li>Podemos plotar curvas diferentes na mesma figura usando a função <code>subplot</code></li>
+                            <li>Na <a href="http://matplotlib.org/api/pyplot_api.html#matplotlib.pyplot.subplot">documentação</a> há muito mais que se pode fazer com subplots</li>
+                        </ul>
+                        <div class="container">
+                            <pre class="element" style="width:58%;"><code class="python" data-noescape>import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.arange(0, 3 * np.pi, 0.1)
+y_sin = np.sin(x)
+y_cos = np.cos(x)
+
+# Prepara um grid 2x1 para subplots e ativa o primeiro subplot
+plt.subplot(2, 1, 1)
+
+# Cria o primeiro plot
+plt.plot(x, y_sin)
+plt.title('Sine')
+
+# Ativa o segundo plot do grid e cria o segundo plot
+plt.subplot(2, 1, 2)
+plt.plot(x, y_cos)
+plt.title('Cosine')
+
+plt.show()</code></pre>
+
+                            <div class="element" style="width:40%;"><img style="background-color: white;" alt="" src="imagens/sine_cosine_subplot.png"/></div>
+                        </div>
+    </div>
+</section>
+
+<section>
+    <div class="retangulo-preto">
+                        <h2>Mostrando imagens com Matplotlib</h2>
+
+                        <ul>
+                            <li>Matplotlib também possui a função <code>imshow</code> que pode ser usada para mostrar uma imagem</li>
+                            <li>Aqui usamos a função <code>imread</code> do scipy para ler a imagem</li>
+                        </ul>
+
+                        <div class="container">
+                            <pre class="element" style="width:58%;"><code class="python" data-noescape>import numpy as np
+from scipy.misc import imread, imresize
+import matplotlib.pyplot as plt
+
+img = imread('assets/cat.jpg')
+img_tinted = img * [1, 0.95, 0.9]
+
+# Mostra a imagem original
+plt.subplot(1, 2, 1)
+plt.imshow(img)
+
+# Mostra a imagem modificada
+plt.subplot(1, 2, 2)
+
+# Nota: imshow resulta em resultados estranhos se os dados
+# não são uint8. Para contornar esse problemas fazemos um
+# cast da imagem para uint8 antes de mostrá-la
+plt.imshow(np.uint8(img_tinted))
+plt.show()
+</code></pre>
+
+                            <div class="element" style="width:38%;"><img style="background-color: white;" alt="" src="imagens/cat_tinted_imshow.png"/></div>
+                        </div>
+    </div>
+</section>

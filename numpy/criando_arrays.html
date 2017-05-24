@@ -1,0 +1,131 @@
+
+
+<section>
+    <div class="retangulo-preto">
+    <h2>Criando Arrays</h2>
+    <ul>
+        <li>Existem diversas maneiras de criar um array</li>
+        <li>A mais direta é listando seus elementos</li>
+    </ul>
+    <code-terminal><in>import numpy as np  # Importa numpy como 'np'</in>
+<in>a = np.array([7, -2, 9, 10])</in>
+<in>a</in>
+<output>array([ 7, -2,  9, 10])</output>
+<in>a.shape</in>
+<output>(4,)</output>
+<in>a.ndim</in>
+<output>1</output>
+<in>b = np.array([[5.2, 2, -9, 10], [-10, 2, 9, 10]])</in>
+<in>b</in>
+<output>
+array([[  5.2,   2. ,  -9. ,  10. ],
+       [-10. ,   2. ,   9. ,  10. ]])</output>
+<in>b.shape</in>
+<output>(2,4)</output></code-terminal>
+    </div>
+</section>
+
+<section>
+    <div class="retangulo-preto">
+    <h2>Datatype</h2>
+    <ul>
+        <li>Os elementos de um array só podem ser do mesmo tipo</li>
+        <li>Um array é muito eficiente em armazenar e
+            computar se o tipo for <code>int</code>, <code>float</code>, ou <code>complex</code></li>
+        <li>Podemos verificar o tipo de um array através da propriedade "dtype"</li>
+    </ul>
+    <code-terminal><in>a = np.array([1, 5, -7, 15, -22, 4])</in>
+<in>a.dtype</in>
+<output>dtype('int64')</output>
+<in>b = np.array([[1, 5, -7], [15, -22, 4]])</in>
+<in>b.dtype</in>
+<output>dtype('float64')</output>
+<in>c = np.array([2, 4, 2-4j])</in>
+<output>dtype('complex128')</output>
+<in>d = np.array([-2,55.3, 22.1], <span class="green">dtype=complex</span>)  # Especifica o dtype</in>
+<in>d.dtype</in>
+<output>dtype('complex128')</output></code-terminal>
+    </div>
+</section>
+
+<section>
+    <div class="retangulo-preto">
+    <h2>Data Shape</h2>
+    <ul>
+        <li>Podemos verificar o formado de um array através da propriedade <span class="green">shape</span></li>
+        <li>Além da propriedade shape podemos usar <span class="green">size</span> para determinar o número de elementos em um array</li>
+        <li>Use o método <span class="green">reshape</span> para mudar o formato do array</li>
+    </ul>
+    <code-terminal><in>a = np.array([[1, 5, -7, 12], [7, 15, -22, 4], [1, 2, 3, 4]])</in>
+<in>a.shape</in>
+<output>(3, 4)</output>
+<in>a.size</in>
+<output>12</output>
+<in>a = a.reshape((2, 6))  # reshape(2, 6) também funciona</in>
+<in>a.shape</in>
+<output>(2, 6)</output>
+<in>a = a.reshape(2,-1,2)  # Use -1 para determinar o valor automaticamente</in>
+<in>a.shape</in>
+<output>(2, 3, 2)</output></code-terminal>
+    </div>
+</section>
+
+
+<section>
+    <div class="retangulo-preto">
+    <h2>Criando Arrays</h2>
+
+    <ul>
+        <li>Há várias funções que retornam arrays no numpy</li>
+        <li>Mais comuns: <code>zeros</code>, <code>ones</code>, <code>eye</code>, <code>empty</code></li>
+    </ul>
+
+    <code-terminal><in>a = np.zeros((2,2))  # Cria um arra de zeros</in>
+<in>b = np.ones((2,3))</in>
+<in>c = np.eye(2, dtype=complex) # Especificamos o dtype como complex</in>
+<in>print(a), print(b), print(c)</in>
+[[ 0.  0.]
+ [ 0.  0.]]
+[[ 1.  1.  1.]
+ [ 1.  1.  1.]]
+[[ 1.+0.j  0.+0.j]
+ [ 0.+0.j  1.+0.j]]
+<in>d = np.empty((2,3), dtype=np.int16)  # Inteiro de apenas 16 bits</in>
+<in>print(d)</in>
+[[91  0 34]
+ [ 7 24 44]]</code-terminal>
+    <aside class="notes">
+        <ul>
+            <li>Percebam que passamos uma tupla como datashape </li>
+            <li>Há parâmetros opcionais como o dtype</li>
+        </ul>
+    </aside>
+    </div>
+</section>
+
+<section>
+    <div class="retangulo-preto">
+    <h2>Criando Arrays</h2>
+    <ul>
+        <li>Podemos também criar arrays com valores aleatórios, em um intervalo, etc</li>
+    </ul>
+    <code-terminal><in>np.random.random((2,3))  # Números aleatórios entre 0 e 1</in>
+<output>
+[[ 0.17926073  0.55768193  0.91629068]
+[ 0.42331764  0.81109184  0.94441903]]</output>
+<in>np.random.normal(loc=10, scale=3, size=(2,4)) # mean=10, var=3</in>
+<output>
+array([[  0.57156707,   2.24492393,  11.96929131,   5.72524926],
+       [  8.42069327,   6.6472876 ,  11.46130987,   6.91887518]])
+</output>
+<in>10 + math.sqrt(3) * np.random.randn(2,4)  # Mesmo que o comando anterior</in>
+<output>
+array([[  8.6556823 ,  11.76621921,  13.06145845,  10.29941938],
+       [  7.71243543,   6.75014684,   8.8052951 ,   8.84438892]])
+</output>
+<in>np.arange(3, 15, 2)  # Varia de 3 a 15 (sem incluir o 15) com passo 2</in>
+<output>array([ 3,  5,  7,  9, 11, 13])</output>
+<in>np.linspace(0, 20, 9)  # 9 valores, indo de 0 a 20</in>
+<output>array([  0. ,   2.5,   5. ,   7.5,  10. ,  12.5,  15. ,  17.5,  20. ])</output></code-terminal>
+    </div>
+</section>

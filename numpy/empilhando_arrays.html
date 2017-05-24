@@ -1,0 +1,29 @@
+<section>
+    <div class="retangulo-preto">
+                    <h2>Empilhando Arrays</h2>
+                    <!-- https://docs.scipy.org/doc/numpy-dev/user/quickstart.html#stacking-together-different-arrays -->
+                    <ul>
+                        <li>Vários arrays podem ser empilhados ao longo de um determinado eixo</li>
+                        <li>Algumas das funções para isso são <code>hstack</code>, <code>vstack</code>, <code>concatenate</code> e <code>stack</code>, np.concatenate</li>
+                    </ul>
+                    <code-terminal dontshowcursor><in>a = np.floor(10*np.random.random((2,2)));  a</in>
+<output>
+array([[ 8.,  8.],
+       [ 0.,  0.]])</output>
+<in>b = np.floor(10*np.random.random((2,2)));  b</in>
+<output>
+array([[ 1.,  8.],
+       [ 0.,  4.]])
+</output>
+<in>np.vstack((a,b))  # Necessário ter o mesmo shape (exceto na primeira dimensão)</in>
+<output>
+array([[ 8.,  8.],
+       [ 0.,  0.],
+       [ 1.,  8.],
+       [ 0.,  4.]])</output>
+<in>np.hstack((a,b))  # Necessário ter o mesmo shape (exceto na segunda dimensão)</in>
+<output>
+array([[ 8.,  8.,  1.,  8.],
+       [ 0.,  0.,  0.,  4.]])</output></code-terminal>
+    </div>
+</section>

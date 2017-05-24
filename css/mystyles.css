@@ -153,6 +153,20 @@ code>in:first-of-type {
 }
 
 
+
+.reveal .retangulo-preto {
+    /* width:80%; */
+    /* float:center; */
+    background: rgba(25,25,25,0.9);
+    padding: 30px 30px 50px 30px;
+    border-radius: 15px;
+}
+
+/* Maximum height of code blocks */
+.reveal pre code {
+    max-height: 600px; /* Reveal sets this to 400px, but I want to override it */
+}
+
 /* .reveal svg rect:hover, text:hover { */
 /*     fill:red !important; */
 /* } */

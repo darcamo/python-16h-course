@@ -1,0 +1,44 @@
+<section>
+    <div class="retangulo-preto">
+        <h2>Principais Operações em Arrays</h2>
+        <ul>
+            <li>As diversas funções matemáticas são implementadas como <code>np.nome_da_função</code> e algumas estão também disponíveis como métodos do array</li>
+            <li class="fragment">Experimente digitar "a." no IPython e apertar <kbd>TAB</kbd> para ver as sugestões e use "?" para ver o help</li>
+        </ul>
+
+                        <code-terminal><in>a = np.random.random((2,3))</in>
+<in>a</in>
+<output>
+array([[ 0.18626021,  0.34556073,  0.39676747],
+       [ 0.53881673,  0.41919451,  0.6852195 ]])</output>
+<in>a.sum()</in>
+<output>2.5718191614547998</output>
+<in>a.min()</in>
+<output>0.1862602113776709</output>
+<in>a.max()</in>
+<output>0.6852195003967595</output></code-terminal>
+    </div>
+</section>
+
+
+<section>
+    <div class="retangulo-preto">
+        <h2>Principais Operações em Arrays</h2>
+        <ul>
+            <li>NumPy possui as funções matemáticas usuais: <span class="green">sin</span>, <span class="green">cos</span>, <span class="green">exp</span>, etc.</li>
+            <li>Elas são chamadas de "universal functions" (ufuncs)</li>
+            <li>Essas funções <span class="green">operam individualmente em cada elemento do array</span>, produzindo um array como saída</li>
+        </ul>
+
+                        <code-terminal><in>B = np.arange(3)</in>
+<in>B</in>
+<output>array([0, 1, 2])</output>
+<in>np.exp(B)</in>
+<output>array([ 1.        ,  2.71828183,  7.3890561 ])</output>
+<in>np.sqrt(B)</in>
+<output>array([ 0.        ,  1.        ,  1.41421356])</output>
+<in>C = np.array([2., -1., 4.])</in>
+<in>np.add(B, C)  # Mesmo que B + C</in>
+<output>array([ 2.,  0.,  6.])</output></code-terminal>
+    </div>
+</section>

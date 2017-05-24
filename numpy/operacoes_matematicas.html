@@ -1,0 +1,30 @@
+<section id="axis-params">
+    <div class="retangulo-preto">
+                    <h2>Operações matemáticas</h2>
+                    <ul>
+                        <li>Já vimos alguns métodos que operam elemento-a-elemento, onde o resultado possui o mesmo rank que a entrada</li>
+                        <li>Alguns métodos reduzem a dimensão obtendo um
+                        resultado de rank menor</li>
+                        <li>Exemplo: <code>mean</code>, <code>var</code>, <code>sum</code>, etc.</li>
+                        <!-- <li>Obtemos um escalar</li> -->
+                        <li class="fragment" data-fragment-index="2">É possível indicar sobre qual dimensão efetuar a operação</li>
+                    </ul>
+                    <div class="container" style="min-width:100%;">
+                        <div class="element" style="width: 65%;">
+                    <code-terminal dontshowcursor><in>a = np.random.randint(3, 4)</in>
+<in>a</in>
+<output>Ver matriz ao lado
+array([[31, 11, 15, 69],
+       [ 8, 75, 68, 54],
+       [31, 47, 86, 23]])</output>
+<in>a.sum()</in>
+<output class="fragment" data-fragment-index="1">518</output>
+<in class="fragment" data-fragment-index="2">a.sum(axis=0)</in>
+<output class="fragment" data-fragment-index="3">array([ 70, 133, 169, 146])</output>
+<in class="fragment" data-fragment-index="4">a.sum(axis=1)</in>
+<output class="fragment" data-fragment-index="5">array([126, 205, 187])</output></code-terminal>
+                        </div>
+                        <div class="element"><svg id="axis-param-placeholder" class="displayed" ></svg></div>
+                    </div>
+    </div>
+</section>

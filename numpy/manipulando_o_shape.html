@@ -1,0 +1,42 @@
+<section id="manipulando_o_shape">
+    <div class="retangulo-preto">
+                    <h2>Manipulando o <em>shape</em></h2>
+                    <ul>
+                        <li><em>shape</em> define o número de elementos em cada dimensão</li>
+                        <li>Há várias maneiras de manipular o shape de um array</li>
+                        <li>Ao invés de <span class="green">reshape</span> podemos usar <span class="green">resize</span> <i class="fa fa-hand-o-right"></i> modifica o array</li>
+                        <li><i class="fa fa-lightbulb-o"></i> Dica: Use "-1" em uma dimensão e o numpy vai detectar o valor correto</li>
+                    </ul>
+
+                    <div class="container" style="width:100%;">
+                        <div class="element" style="width:700px;">
+                            <code-terminal style="font-size:84%;" dontshowcursor><in>a = np.floor(10*np.random.random((3,4)))</in>
+<in>a</in>
+<output># Ver matriz ao lado
+<!-- array([[ 2.,  8.,  0.,  6.],
+[ 4.,  5.,  1.,  1.],
+[ 8.,  9.,  3.,  6.]]) --></output>
+<span class="fragment"><in>a.shape  # Apenas retorna o shape atual do array</in>
+<output>(3, 4)</output></span>
+<span class="fragment"><in>a.ravel()  # "achata" o array (sem modificar)</in>
+<output>array([ 2.,  8.,  0.,  6.,  4.,  5.,  1.,  1.,  8.,  9.,  3.,  6.])</output></span>
+<span class="fragment"><in>a.shape = (6, 2)  # Semelhante a "a = a.reshape(6, 2)"</in></span>
+<span class="fragment"><in>a.T  # Não modifica o array</in>
+<output>
+array([[ 2.,  0.,  4.,  1.,  8.,  3.],
+       [ 8.,  6.,  5.,  1.,  9.,  6.]])</output></span>
+<span class="fragment"><in>a.resize(2,6)</in>
+<in>a</in>
+<output>
+array([[ 2.,  0.,  4.,  1.,  8.,  3.],
+       [ 8.,  6.,  5.,  1.,  9.,  6.]])</span>
+</output></code-terminal>
+                        </div>
+
+                        <div class="element" style="width:271px; height:294px;position:relative;">
+                            <!-- <div>Shape de <span class="green">a</span></div> -->
+                            <div style="transform: scale(0.8,0.8) translateX(-20%);"><svg id="manipulando_o_shape_placeholder" style="position:absolute; left: 0px; top:0px;"></svg></div>
+                        </div>
+                    </div>
+    </div>
+</section>

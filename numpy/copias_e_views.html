@@ -1,0 +1,86 @@
+
+<section>
+    <div class="retangulo-preto">
+                    <h2>Cópias e Views</h2>
+                    <!-- https://docs.scipy.org/doc/numpy-dev/user/quickstart.html#copies-and-views -->
+                    <ul>
+                        <li>Quando operando e manipulando arrays, as vezes os dados são copiados em um novo array e as vezes não</li>
+                        <li>Casos sem cópia:</li>
+                        <ul>
+                            <li>Assinalamento (Python também funciona assim para tipos mutáveis)</li>
+                            <li>Mudança de shape</li>
+                            <li>Argumentos de funções</li>
+                        </ul>
+                        <code-terminal dontshowcursor><in>a = np.arange(12)</in>
+<in>b = a            # Nenhum objeto novo é criado com um assinalamento</in>
+<in>b is a           # "a" e "b" são dois nomes para o mesmo array</in>
+<output>True</output>
+<in>b.shape = 3,4    # Muda apenas o shape do array sem mudar os dados na memória</in>
+<in>a.shape</in>
+<output>(3, 4)</output>
+<in>def f(x):
+...           print(id(x))</in>
+<in>id(a)                           # id é um identificador único de um objeto</in>
+<output>148293216</output>
+<in>f(a)</in>
+<output>148293216</output></code-terminal>
+                    </ul>
+    </div>
+</section>
+
+<section>
+    <div class="retangulo-preto">
+                    <h2>Cópias e Views</h2>
+                    <ul>
+                        <li>Diferentes arrays podem compartilhar os mesmos dados na memória</li>
+                        <li>O método <code>view</code> de um array cria um novo objeto array que utiliza os mesmos dados</li>
+                        <li>Mudanças feitas nos dados de um são refletidas no outro array, mas os dois não são o mesmo objeto como ocorre em Python com um assinalamento</li>
+                        <li>Os dois objetos podem ter formas diferentes</li>
+                    </ul>
+                    <code-terminal dontshowcursor><in>c = a.view()</in>
+<in>c is a</in>
+<output>False</output>
+<in>c.base is a                        # c é uma "view" dos dados de 'a'</in>
+<output>True</output>
+<in>c.flags.owndata</in>
+<output>False</output>
+<in>c.shape = 2,6                      # o shape de 'a' não muda</in>
+<in>a.shape</in>
+<output>(3, 4)</output>
+<in>c[0,4] = 1234                      # o shape de 'a' muda</in>
+<in>a</in>
+<output>
+array([[   0,    1,    2,    3],
+       [1234,    5,    6,    7],
+       [   8,    9,   10,   11]])</output></code-terminal>
+    </div>
+</section>
+
+
+<section>
+    <div class="retangulo-preto">
+                    <h2>Cópias e Views</h2>
+                    <ul>
+                        <li>Fatiar um array retorna um view do array</li>
+                        <li>Para criar um cópia independente de um array use o método <code>copy</code></li>
+                    </ul>
+                    <code-terminal style="font-size:95%;" dontshowcursor><in>s = a[ : , 1:3]</in>
+<in>s[:] = 10  # s[:] é um view de s. Note a diferença entre s=10 e s[:]=10</in>
+<in>a</in>
+<output>
+array([[   0,   10,   10,    3],
+       [1234,   10,   10,    7],
+       [   8,   10,   10,   11]])</output>
+<in>d = a.copy()  # um novo objeto array com dados novos é criado</in>
+<in>d is a</in>
+<output>False</output>
+<in>d.base is a  # "d" não compartilha nada com "a"</in>
+<output>False</output>
+<in>d[0,0] = 9999</in>
+<in>a</in>
+<output>
+array([[   0,   10,   10,    3],
+       [1234,   10,   10,    7],
+       [   8,   10,   10,   11]])</output></code-terminal>
+    </div>
+</section>

@@ -1,0 +1,73 @@
+
+<section>
+    <div class="retangulo-preto">
+    <h2>Operações Básicas</h2>
+    <ul>
+        <li>Operadores aritméticos em arrays operam elemento-a-elemento</li>
+    </ul>
+    <code-terminal><in>a = np.array([20,30,40,50])</in>
+<in>b = np.arange( 4 )</in>
+<in>b</in>
+<output>array([0, 1, 2, 3])</output>
+<in>c = a-b</in>
+<in>c</in>
+<output>array([20, 29, 38, 47])</output>
+<in>b**2</in>
+<output>array([0, 1, 4, 9])</output>
+<in>10*np.sin(a)</in>
+<output>array([ 9.12945251, -9.88031624,  7.4511316 , -2.62374854])</output>
+<in>a<35</in>
+<output>array([ True, True, False, False], dtype=bool)</output></code-terminal>
+
+    </div>
+</section>
+
+<section>
+    <div class="retangulo-preto">
+    <h2>Operações Básicas</h2>
+    <ul>
+        <li>O operador <code>*</code> não é exceção e efetua uma multiplicação elemento-a-elemento</li>
+        <li>Para produto matricial use <code>@</code> ou o método <code>dot</code></li>
+    </ul>
+    <code-terminal><in>A = np.array([[1,1], [0,1]])</in>
+<in>B = np.array([[2,0], [3,4]])</in>
+<in>A*B  # Produto elemento-a-elemento</in>
+<output>
+array([[2, 0],
+       [0, 4]])</output>
+<in>A.dot(B)  # Produto matricial</in>
+<output>
+array([[5, 4],
+       [3, 4]])
+</output>
+<in>A @ B  # Produto matricial: Python 3.5 ou superior</in>
+<output>
+array([[5, 4],
+       [3, 4]])
+</output></code-terminal>
+    </div>
+</section>
+
+<section>
+    <div class="retangulo-preto">
+    <h2>Operações Básicas</h2>
+    <ul>
+        <li>Algumas operações, como <code>+=</code> e <code>*=</code>, modificam o array atual ao invés de criar um novo array <i class="fa fa-hand-o-right"></i> Note que o datatype não pode mudar</li>
+    </ul>
+
+    <code-terminal><in>a = np.ones((2,3), dtype=int)  # 'a' é uma matriz de inteiros iguais a 1</in>
+<in>b = np.random.random((2,3))  # 'b' é uma matriz de números de ponto flutuante</in>
+<in>a *= 3</in>
+<in>a</in>
+<output>
+array([[3, 3, 3],
+       [3, 3, 3]])</output>
+<in>b += a  # Sobrescreve 'b' com o valor de a+b</in>
+<in>b</in>
+<output>
+array([[ 3.417022  ,  3.72032449,  3.00011437],
+       [ 3.30233257,  3.14675589,  3.09233859]])</output>
+<in>a += b  # 'b' NÃO é automaticamente convertido para um ipo inteiro</in>
+<span class="red">TypeError:</span> Cannot cast ufunc add output from dtype('float64') to dtype('int64')<br/>with casting rule 'same_kind'</code-terminal>
+    </div>
+</section>
