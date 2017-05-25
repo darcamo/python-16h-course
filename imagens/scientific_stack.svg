@@ -41,7 +41,7 @@
             <circle cy="0" cx="0" r="116.45" class="scipy hidden"/>
             <circle cy="0" cx="0" r="88.588" class="numpy hidden"/>
             <circle cy="0" cx="0" r="61.843" class="python hidden"/>
-            <text class="texto-lateral" style="stroke-width:1.0;  stroke:black; fill:black !important;" x="0" text-anchor="middle" alignment-baseline="middle">Python</text>
+            <text class="texto-lateral python hidden" style="stroke-width:1.0;  stroke:black; fill:black !important;" x="0" text-anchor="middle" alignment-baseline="middle">Python</text>
         </g>
     </g>
 

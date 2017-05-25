@@ -157,7 +157,7 @@ code>in:first-of-type {
 .reveal .retangulo-preto {
     /* width:80%; */
     /* float:center; */
-    background: rgba(25,25,25,0.9);
+    background: rgba(25,25,25,0.8);
     padding: 30px 30px 50px 30px;
     border-radius: 15px;
 }

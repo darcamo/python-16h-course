@@ -1,0 +1,63 @@
+<svg xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="180px" width="300px" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" viewBox="0 0 300 180">
+    <style>
+
+    </style>
+    <!-- <rect x="0" y="0" width="300" height="180" fill="#eee"></rect> -->
+    <g stroke-width="1" font-size="25px" font-family="sans-serif" text-anchor="middle">
+        <g>
+            <rect height="60" width="60" stroke="#000" y="0" x="0" fill="white"/>
+            <text y="30" x="30" alignment-baseline="central" font-size="35px">a</text>
+            <text y="80" x="30" alignment-baseline="central">0</text>
+            <text y="120" x="30" alignment-baseline="central">-5</text>
+            <text y="160" x="30" alignment-baseline="central">~4</text>
+        </g>
+        <g transform="translate(60 0)">
+            <rect height="60" width="60" stroke="#000" y="0" x="0" fill="white"/>
+            <text y="30" x="30" alignment-baseline="central" font-size="35px">b</text>
+            <text y="80" x="30" alignment-baseline="central">1</text>
+            <text y="120" x="30" alignment-baseline="central">-4</text>
+            <text y="160" x="30" alignment-baseline="central">~3</text>
+        </g>
+        <g transform="translate(120 0)">
+            <rect height="60" width="60" stroke="#000" y="0" x="0" fill="white"/>
+            <text y="30" x="30" alignment-baseline="central" font-size="35px">c</text>
+            <text y="80" x="30" alignment-baseline="central">2</text>
+            <text y="120" x="30" alignment-baseline="central">-3</text>
+            <text y="160" x="30" alignment-baseline="central">~2</text>
+        </g>
+        <g transform="translate(180 0)">
+            <rect height="60" width="60" stroke="#000" y="0" x="0" fill="white"/>
+            <text y="30" x="30" alignment-baseline="central" font-size="35px">d</text>
+            <text y="80" x="30" alignment-baseline="central">3</text>
+            <text y="120" x="30" alignment-baseline="central">-2</text>
+            <text y="160" x="30" alignment-baseline="central">~1</text>
+        </g>
+        <g transform="translate(240 0)">
+            <rect height="60" width="60" stroke="#000" y="0" x="0" fill="white"/>
+            <text y="30" x="30" alignment-baseline="central" font-size="35px">e</text>
+            <text y="80" x="30" alignment-baseline="central">4</text>
+            <text y="120" x="30" alignment-baseline="central">-1</text>
+            <text y="160" x="30" alignment-baseline="central">~0</text>
+        </g>
+    </g>
+    <!-- <g transform="translate(-161.88 -484.8)">
+         <rect height="40" width="40" stroke="#000" y="485.3" x="162.38" fill="none"/>
+         <text style="word-spacing:0px;letter-spacing:0px" line-height="125%" font-size="12px" y="508.08035" x="178.38983" font-family="Sans" xml:space="preserve" fill="#000000"><tspan y="508.08035" x="178.38983">a</tspan></text>
+         <g transform="translate(-1.9213)">
+         <rect height="40" width="40" stroke="#000" y="485.3" x="204.3" fill="none"/>
+         <text style="word-spacing:0px;letter-spacing:0px" line-height="125%" font-size="12px" y="509.27859" x="219.77795" font-family="Sans" xml:space="preserve" fill="#000000"><tspan y="509.27859" x="219.77795">b</tspan></text>
+         </g>
+         <g transform="translate(-8.3883 -1.0102)">
+         <text style="word-spacing:0px;letter-spacing:0px" line-height="125%" font-size="12px" y="509.09052" x="267.01254" font-family="Sans" xml:space="preserve" fill="#000000"><tspan y="509.09052" x="267.01254">c</tspan></text>
+         <rect height="40" width="40" stroke="#000" y="486.32" x="250.77" fill="none"/>
+         </g>
+         <g transform="translate(-12.33 1.2627)">
+         <text style="word-spacing:0px;letter-spacing:0px" line-height="125%" font-size="12px" y="508.0159" x="310.61728" font-family="Sans" xml:space="preserve" fill="#000000"><tspan y="508.0159" x="310.61728">d</tspan></text>
+         <rect height="40" width="40" stroke="#000" y="484.04" x="294.71" fill="none"/>
+         </g>
+         <g transform="translate(-16.272 -1.7678)">
+         <text style="word-spacing:0px;letter-spacing:0px" line-height="125%" font-size="12px" y="509.84811" x="354.45053" font-family="Sans" xml:space="preserve" fill="#000000"><tspan y="509.84811" x="354.45053">e</tspan></text>
+         <rect height="40" width="40" stroke="#000" y="487.07" x="338.65" fill="none"/>
+         </g>
+         </g> -->
+</svg>
