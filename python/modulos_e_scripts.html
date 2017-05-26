@@ -1,7 +1,8 @@
 
 <section>
     <div class="retangulo-preto">
-    <h2>Módulos e Scripts</h2>
+        <h2>Módulos e Scripts</h2>
+    </div>
 </section>
 
 <section>
@@ -31,6 +32,7 @@
         </li>
         <li class="fragment">Nota: É necessário ter o Python instalado no computador</li>
     </ul>
+    </div>
 </section>
 
 <section>
@@ -47,16 +49,16 @@ def triplica(x):
 return 3*x</code></pre>É possíve importar as definições do módulo <code>my_funcs</code></li>
     </ul>
 
-    <code-terminal>>>> from my_funcs import dobra, triplica
->>> dobra(5)
-10
->>> triplica(5)
-15</code-terminal>
+    <code-terminal class="fragment"><in>from my_funcs import dobra, triplica</in>
+<in>dobra(5)</in>
+<output>10</output>
+<in>triplica(5)</in>
+<output>15</output></code-terminal>
 
-    <code-terminal>>>> import my_funcs as mf
->>> mf.dobra(5)
-10
->>> mf.triplica(5)
-15</code-terminal>
-
+    <code-terminal class="fragment"><in>import my_funcs as mf</in>
+<in>mf.dobra(5)</in>
+<output>10</output>
+<in>mf.triplica(5)</in>
+<output>15</output></code-terminal>
+    </div>
 </section>

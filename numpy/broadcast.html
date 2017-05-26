@@ -7,9 +7,8 @@
                             <li>Operações no NumPy geralmente são feitas em
                                 pares de arrays elemento-a-elemento </li>
                             <li class="fragment" data-fragment-index="1">Broadcast corresponde a maneira como o numpy trata arrays com <span class="green">formas diferentes</span> durante operações aritméticas</li>
-                            <!-- <li>É um recurso poderoso que permite as <span class="green">ufuncs</span> (universal functions) lidar com entradas de tamanhos distintos</li> -->
-                            <li class="fragment" data-fragment-index="3">O exemplo mais simples de broadcast ocorre quando um array e um escalar são combinados</span></li>
-                            <li class="fragment" data-fragment-index="4">o escalar é <em class="green">esticado</em> durante a operação aritmética para ter a <span class="green">mesma forma que o array</li>
+                            <li class="fragment" data-fragment-index="3">O exemplo mais simples de broadcast ocorre quando um array e um escalar são combinados</li>
+                            <li class="fragment" data-fragment-index="4">o escalar é <em class="green">esticado</em> durante a operação aritmética para ter a <span class="green">mesma forma que o array</span></li>
                         </ul>
                         <code-terminal dontshowcursor><in>a = np.array([1.0, 2.0, 3.0])</in>
 <in>b = np.array([2.0, 2.0, 2.0])</in>
@@ -19,7 +18,7 @@
 <in>b = 2.0</in>
 <in>a * b</in></span>
 <span class="fragment" data-fragment-index="4"><output>array([ 2.,  4.,  6.])</output></span></code-terminal>
-                            </span>
+    </div>
 </section>
 
 <section id="broadcast">

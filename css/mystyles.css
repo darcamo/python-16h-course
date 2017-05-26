@@ -167,6 +167,10 @@ code>in:first-of-type {
     max-height: 600px; /* Reveal sets this to 400px, but I want to override it */
 }
 
+ul {
+    width: 100%;
+}
+
 /* .reveal svg rect:hover, text:hover { */
 /*     fill:red !important; */
 /* } */

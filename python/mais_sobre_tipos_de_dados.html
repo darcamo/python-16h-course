@@ -1,6 +1,18 @@
 
 <section>
-    <enar strings
+    <div class="retangulo-preto">
+    <h2>Mais sobre os tipos de dados em Python</h2>
+    <p style="margin: 0px; padding: 0px;"><small>Vamos agora mostrar em maiores detalhes os tipos de dados em Python</small></p>
+    </div>
+</section>
+
+<section>
+    <div class="retangulo-preto">
+    <h2>Strings em Python</h2>
+
+    <ul>
+        <li>Strings são escritas com aspas simples ou duplas</li>
+        <li class="fragment">O operador "+" pode ser usado para concatenar strings
             <ul>
                 <li>Ex: <code>"a" + "b"</code> é o mesmo que <code>"ab"</code></li>
             </ul></li>
@@ -93,12 +105,12 @@
         <li>Python possui vários tipos compostos,
             usados para agrupar outros valores.</li>
         <li class="fragment">O mais versátil de todos é a lista
-            <code-terminal class="python"><in>l1 = [15, 34.5, 44]  # itens são separados por vírgulas</in>
+            <code-terminal dontshowcursor class="python"><in>l1 = [15, 34.5, 44]  # itens são separados por vírgulas</in>
 <in>l2 = ["Brasil", "Estados Unidos", "Japão", "França"]</in>
-<in>l3 = [1, 2, "três", "quatro"]  # Itens podem ter tipos diferentes</code-terminal></li></in>
+<in>l3 = [1, 2, "três", "quatro"]  # Itens podem ter tipos diferentes</in></code-terminal></li>
         <aside class="notes">Listas podem conter itens de diferentes tipos, mas normalmente todos os itens possuem o mesmo tipo</aside>
         <li class="fragment">A lista é um tipo <span class="green">mutável</span> <i class="fa fa-hand-o-right"></i> é possível modificar seus elementos
-            <code-terminal class="python"><in>a = [1, 5, 10, 15, 20]</in>
+            <code-terminal dontshowcursor class="python"><in>a = [1, 5, 10, 15, 20]</in>
 <in>a[2] = 100</in>
 <in>print(a)</in>
 [1, 5, 100, 15, 20]</code-terminal></li>
@@ -106,9 +118,8 @@
             <ul>
                 <li>Não podemos modificar uma letra de uma string <span class="green"><i class="fa fa-hand-o-right"></i>Tentem!</span></li>
                 <li>Precisamos criar uma nova string nesse caso</li>
-        </li>
             </ul>
-
+        </li>
     </ul>
     </div>
 </section>
@@ -157,7 +168,7 @@
 <span class="fragment" data-fragment-index="2"><in>b = a.pop()   # Remove o último elemento da lista (3000) e retorna</in>
 <in>print(b)</in>
 3000</span>
-<span class="fragment" data-fragment-index="3"><in>del a[0:2]  # Remove os 2 primeiros elementos</span></code-terminal></in>
+<span class="fragment" data-fragment-index="3"><in>del a[0:2]  # Remove os 2 primeiros elementos</in></span></code-terminal>
     </div>
 </section>
 
@@ -248,7 +259,7 @@
     </ul>
 
     <code-terminal dontshowcursor><in>minha_tupla = (1, 2, 3, "e", "já")</in>
-<span class="fragment" data-fragment-index="1"><in>minha_tupla[0] = 10  # ERRO -> tuplas são imutáveis!</span></in>
+<span class="fragment" data-fragment-index="1"><in>minha_tupla[0] = 10  # ERRO -> tuplas são imutáveis!</in></span>
 <span class="fragment" data-fragment-index="2"><in>a, b, c, d, e = minha_tupla  # Coloca os elementos nas variáveis</in>
 <in>print(b)</in>
 2
@@ -310,7 +321,9 @@ número de ouro: 1.618</code-terminal></p>
     <ul>
         <li>Vamos incrementar nosso programa sobre os times</li>
         <li>Conte quantas vezes cada time ganhou</li>
-        <li class="red">CONTINUAR</li>
+        <li class="fragment"><span class="green">Solução</span>
+            <pre><code class="python" data-external="code/times_futebol4.py" data-trim></code></pre>
+        </li>
     </ul>
     </div>
 </section>

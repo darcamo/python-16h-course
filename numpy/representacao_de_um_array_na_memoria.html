@@ -1,29 +1,27 @@
 <section id="memory_order">
     <div class="retangulo-preto">
-                    <h2>Representação de um Array na Memória</h2>
+        <h2>Representação de um Array na Memória</h2>
 
-                    <ul>
-                        <li>Um array é armazenado em uma região contínua de memória <span class="green">independentemente de sua dimensão</span></li>
-                        <li class="fragment" data-fragment-index="1">Se mudarmos o shape de um array normalmente não é feita uma cópia</li>
-                        <li class="fragment" data-fragment-index="2">A ordem em que os elementos são armazenados na memória pode tanto ser como "<span class="green">em C</span>" (padrão) ou como "<span class="green">em Fortran</span>"</li>
+        <ul>
+            <li>Um array é armazenado em uma região contínua de memória</li>
+            <li class="fragment" data-fragment-index="1">Podemos mudar o shape de um array sem mexer nos elementos</li>
+            <li class="fragment" data-fragment-index="2">A ordem em que os elementos são armazenados na memória pode tanto ser como "<span class="green">em C</span>" (padrão) ou como "<span class="green">em Fortran</span>"</li>
+            <li class="fragment" data-fragment-index="3"><span class="green">Ordem do C</span>: A última dimensão varia mais rapidamente
+                <div style="position: relative;">
+                    <svg id="c_order" class="displayed" style="margin-top: 60px;"></svg>
+                    <div style="position: absolute; left: 120px; top: -50px; transform: translate(-10%, 0);">Representação no Numpy</div>
+                    <div style="position: absolute; right: 160px; top: -50px;">Representação na Memória</div>
+                </div>
+            </li>
 
-                        <!-- <img  class="displayed" alt="" src="imagens/numpy_part/numpy_C_order_fortran_order.png" style="background-color:LightBlue;"/> -->
+            <li class="fragment" data-fragment-index="4"><span class="green">Ordem do Fortran</span>: A primeira dimensão varia mais rapidamente
 
+                <div style="position: relative;">
+                    <div style="position: absolute; left: 120px; top: -50px; transform: translate(-10%, 0);">Representação no Numpy</div>
+                    <div style="position: absolute; right: 160px; top: -50px;">Representação na Memória</div>
+                    <svg id="fortran_order" class="displayed" style="margin-top: 60px;"></svg>
+                </div></li>
 
-                        <li class="fragment" data-fragment-index="3"><span class="green">Ordem do C</span>: A última dimensão varia mais rapidamente
-                        <div style="position: relative;">
-                            <div style="position: absolute; left: 120px; top: -40px; transform: translate(-25%, 0);">Representação no Numpy</div>
-                            <div style="position: absolute; right: 160px; top: -40px;">Representação na Memória</div>
-                            <svg id="c_order" class="displayed" style="margin-top: 50px;"></svg></div></li>
-
-                        <li class="fragment" data-fragment-index="4"><span class="green">Ordem do Fortran</span>: A primeira dimensão varia mais rapidamente
-
-                        <div style="position: relative;">
-                            <div style="position: absolute; left: 120px; top: -40px; transform: translate(-25%, 0);">Representação no Numpy</div>
-                            <div style="position: absolute; right: 160px; top: -40px;">Representação na Memória</div>
-                            <svg id="fortran_order" class="displayed" style="margin-top: 50px;"></svg>
-                        </div></li>
-
-                    </ul>
+        </ul>
     </div>
 </section>
